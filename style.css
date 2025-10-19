@@ -1,14 +1,146 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400,700&display=swap");
 
-/* basic responsive image css */
-img, video{
-  max-width: 100%;
+/* =========================================
+   Base Styles
+========================================= */
+html {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #C6DFFC;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #8338A4;
+  color: #C6DFFC;
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.3;
+}
+
+h1 { font-size: 44px; font-weight: 400; }
+h2, h3 { font-weight: 700; }
+
+/* =========================================
+   Responsive YouTube Videos
+========================================= */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   Featured Landmark - Full Width
+========================================= */
+.featured-landmark-wrapper {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #3146F7;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.featured-landmark {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.featured-landmark img {
+  width: 50%;
+  max-width: 600px;
   height: auto;
+  border-radius: 10px;
 }
 
-.landmarks-grid{
+@media screen and (max-width: 768px) {
+  .featured-landmark img { width: 70%; }
+}
+
+@media screen and (max-width: 480px) {
+  .featured-landmark img { width: 90%; }
+}
+
+/* =========================================
+   Landmark Cards
+========================================= */
+.landmark-grid {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-figure{ margin:0;}
+.landmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 2px solid #e6e6e6;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landmark:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.landmark figure {
+  position: relative; /* needed for overlay text */
+  margin: 0;
+}
+
+.landmark img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* =========================================
+   Overlay text for photo credit
+========================================= */
+.landmark-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #3146F7;
+  background:#e6e6e6;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Landmark figcaption (name below image) */
+.landmark figcaption {
+  background: #e6e6e6;
+  padding: 5px 0;
+  font-size: 0.85rem;
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+  font-weight: 700;
+}
