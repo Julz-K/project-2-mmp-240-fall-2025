@@ -171,6 +171,27 @@ h2, h3 { font-weight: 700; }
 }
 
 /* =========================================
+   Picture Element - Full Width (for index page)
+========================================= */
+picture {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
    Featured Landmark - Full Width
 ========================================= */
 .featured-landmark-wrapper {
@@ -286,4 +307,44 @@ a.landmark-text:visited {
   text-align: center;
   font-weight: 700;
   color: #545878;
+}
+
+/* =========================================
+   Hero Image - Full Width (for landmark pages)
+========================================= */
+.hero {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero figcaption {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.hero figcaption a {
+  color: #C6DFFC;
+  text-decoration: underline;
+}
+
+.hero figcaption a:hover {
+  color: #ffffff;
+}
+
+img, video {
+  max-width: 100%;
+  width: auto;
 }
