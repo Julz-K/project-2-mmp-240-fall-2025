@@ -11,9 +11,9 @@ html {
 }
 :root {
   --clr-nav: #ffffff;
-  --clr-nav-hover: #333333;
-  --clr-nav-hover-bg: #ffffff;
-  --clr-nav-background: #333333;
+  --clr-nav-hover: #;
+  --clr-nav-hover-bg: #000;
+  --clr-nav-background: #D6D6D6;
   /* These change the easing of transitions, used on menu button */
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);/* ease in and out */
   --ease-in: cubic-bezier(0.42, 0, 1, 1);/* ease in */
@@ -28,6 +28,12 @@ body{
 header {
   background: var(--clr-nav-background);
   color: var(--clr-nav);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
 }
 
 /* Top row: logo + hamburger aligned horizontally */
@@ -284,18 +290,18 @@ picture img {
   box-sizing: border-box;
 }
 
-a.landmark-text {
-  color: #3146F7;
+a{
+  color: #FA8AAD;
   text-decoration: none;
 }
 
-a.landmark-text:hover {
+a:hover {
   text-decoration: underline;
 }
 
 /* Visited links change color */
-a.landmark-text:visited {
-  color: #357001; /* clicked link color */
+a:visited {
+  color: #3146F7; /* clicked link color */
 }
 
 /* Landmark figcaption (name below image) */
@@ -347,4 +353,20 @@ a.landmark-text:visited {
 img, video {
   max-width: 100%;
   width: auto;
+}
+/* =========================================
+   Pagination Navigation - Full Width Bottom Bar
+========================================= */
+#pagination {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 3rem;
+  gap: 1rem;
 }
